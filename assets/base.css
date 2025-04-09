@@ -3595,3 +3595,16 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__inline-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* z-index: 10; */
+}
