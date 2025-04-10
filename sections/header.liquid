@@ -77,9 +77,11 @@
 </style>
 
 {%- style -%}
+{% comment %}
   .header {
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
   }
+{% endcomment %}
 
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
@@ -92,12 +94,14 @@
     }
   }
 
+{% comment %}
   @media screen and (min-width: 990px) {
     .header {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+{% endcomment %}
 {%- endstyle -%}
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -153,24 +157,15 @@
       {%- if section.settings.logo_position != 'middle-center' -%}
         {%- if request.page_type == 'index' -%}
           <h1 class="header__heading">
-        {%- endif -%}
-        <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-          {%- if settings.logo != blank -%}
-            <div class="header__heading-logo-wrapper">
+            <span class="header__heading-logo-wrapper">
               <img
                 src="{{ 'icon-logo.svg' | asset_url }}"
                 alt="{{ shop.name }}"
                 width="120"
                 height="auto"
                 loading="lazy"
-                class="header__heading-logo"
-              >
-            </div>
-          {%- else -%}
-            <span class="h2">{{ shop.name }}</span>
-          {%- endif -%}
-        </a>
-        {%- if request.page_type == 'index' -%}
+                class="header__heading-logo">
+            </span>
           </h1>
         {%- endif -%}
       {%- endif -%}
