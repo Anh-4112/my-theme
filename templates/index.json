@@ -114,7 +114,7 @@
     "featured_collection_9UiU7d": {
       "type": "featured-collection",
       "settings": {
-        "collection": "",
+        "collection": "new-arrivals",
         "products_to_show": 6,
         "title": "New Arrivals",
         "heading_size": "h0",

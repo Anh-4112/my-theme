@@ -3619,6 +3619,10 @@ details-disclosure > details {
   overflow: hidden;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .d-none {
   display: none !important;
 }
@@ -3673,6 +3677,18 @@ details-disclosure > details {
 
 .rounded-35 {
   border-radius: 3.5rem !important;
+}
+
+.fs-16 {
+  font-size: 1.6rem !important;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.txt-none-underline-hover:hover {
+  text-decoration: none !important;
 }
 
 .top-n1100p {
