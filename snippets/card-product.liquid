@@ -54,7 +54,7 @@
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       <div
-        class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
+        class="rounded-15 overflow-hidden card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
@@ -161,8 +161,8 @@
             </a>
           </h3>
 
-          {% comment %}RATE{% endcomment %}
-          <div class="d-flex">
+          {% comment %} RATE {% endcomment %}
+          <div class="d-flex mt-10">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.96853 3.78143C10.0011 3.88335 10.0043 3.98868 9.9783 4.0974C9.95226 4.20612 9.89692 4.29785 9.81228 4.37259L7.63455 6.37033L8.27908 9.32616C8.29861 9.43488 8.28885 9.5402 8.24978 9.64213C8.21723 9.74405 8.15864 9.82899 8.074 9.89694C7.98286 9.96489 7.8852 9.99887 7.78103 9.99887C7.67687 10.0057 7.57921 9.98188 7.48806 9.92752L4.99783 8.36806L2.5076 9.92752C2.46853 9.94791 2.42296 9.96489 2.37088 9.97848C2.3253 9.99207 2.27973 9.99887 2.23416 9.99887C2.18207 9.99887 2.12674 9.98868 2.06814 9.96829C2.01606 9.9547 1.96723 9.93092 1.92166 9.89694C1.83702 9.82899 1.77517 9.74405 1.73611 9.64213C1.70356 9.5402 1.69705 9.43488 1.71658 9.32616L2.36111 6.37033L0.183377 4.37259C0.0987413 4.29785 0.0434028 4.20612 0.0173611 4.0974C-0.00868056 3.98868 -0.00542535 3.88335 0.0271267 3.78143C0.0596788 3.67271 0.115017 3.58437 0.193142 3.51642C0.277778 3.44847 0.372179 3.4077 0.476345 3.39411L3.36697 3.12911L4.50955 0.336353C4.54861 0.234428 4.61372 0.152888 4.70486 0.0917327C4.79601 0.0305776 4.89366 0 4.99783 0C5.102 0 5.19965 0.0305776 5.2908 0.0917327C5.38194 0.152888 5.44705 0.234428 5.48611 0.336353L6.62869 3.12911L9.51931 3.39411C9.62348 3.4077 9.71463 3.44847 9.79275 3.51642C9.87739 3.58437 9.93598 3.67271 9.96853 3.78143Z" fill="#111111"/>
             </svg>
@@ -307,7 +307,27 @@
               {% endif %}
             {%- endif -%}
           </div>
-        </div>
+
+          {%- assign color_option_index = -1 -%}
+
+          {%- for option in card_product.options_with_values -%}
+            {%- if option.name == 'Color' or option.name == 'Màu sắc' -%}
+              {%- assign color_option_index = forloop.index0 -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if color_option_index != -1 -%}
+            <ul class="variant-color-swatches">
+              {%- assign shown_colors = '' -%}
+              {%- for variant in card_product.variants -%}
+                {%- assign color = variant.options[color_option_index] -%}
+                {%- unless shown_colors contains color -%}
+                  <li class="swatch" style="background-color: {{ color | downcase }};" title="{{ color }}"></li>
+                  {%- assign shown_colors = shown_colors | append: color | append: ',' -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
         {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
         {% if quick_add == 'standard' %}
           <div class="quick-add no-js-hidden">
