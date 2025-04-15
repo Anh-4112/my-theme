@@ -3635,6 +3635,10 @@ details-disclosure > details {
   display: flex !important;
 }
 
+.flex-30p {
+  flex: 0 0 30%;
+}
+
 .flex-33p {
   flex: 0 0 33%;
 }
