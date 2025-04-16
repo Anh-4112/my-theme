@@ -104,22 +104,22 @@
   </ul>
 {% endcomment %}
 
-<div class="footer-contact-info">
-  <img 
-    src="{{ 'logo.svg' | asset_url }}" 
-    alt="{{ shop.name }}" 
-    class="footer-logo" 
+<div class="d-flex column">
+  <img
+    src="{{ 'logo.svg' | asset_url }}"
+    alt="{{ shop.name }}"
+    class="w-max-content" 
     width="100%" 
     height="auto"
   />  
-  <p>268 St, South New York/NY 98944, United States</p>
-  <p>+222-1800-2628</p>
-  <p>blueskytechcompany@gmail.com</p>
+  <p class="mb-0">268 St, South New York/NY 98944, United States</p>
+  <p class="my-0">+222-1800-2628</p>
+  <p class="mt-0">blueskytechcompany@gmail.com</p>
 
-  <ul class="list-unstyled list-social{% if class %} {{ class}}{% endif %}" role="list">
+  <ul class="g-10 list-unstyled list-social{% if class %} {{ class}}{% endif %}" role="list">
     {%- if settings.social_facebook_link != blank -%}
       <li class="list-social__item">
-        <a href="{{ settings.social_facebook_link }}" class="social-icon-button link list-social__link">
+        <a href="{{ settings.social_facebook_link }}" class="bor bor-1 bor-gray w-40 h-40 d-flex jc-center ai-center rounded-50p link list-social__link">
           <span class="svg-wrapper">
             {{- 'icon-facebook.svg' | inline_asset_content -}}
           </span>
@@ -129,7 +129,7 @@
     {%- endif -%}
     {%- if settings.social_instagram_link != blank -%}
       <li class="list-social__item">
-        <a href="{{ settings.social_instagram_link }}" class="social-icon-button link list-social__link">
+        <a href="{{ settings.social_instagram_link }}" class="bor bor-1 bor-gray w-40 h-40 d-flex jc-center ai-center rounded-50p link list-social__link">
           <span class="svg-wrapper">
             {{- 'icon-instagram.svg' | inline_asset_content -}}
           </span>
@@ -139,7 +139,7 @@
     {%- endif -%}
     {%- if settings.social_youtube_link != blank -%}
       <li class="list-social__item">
-        <a href="{{ settings.social_youtube_link }}" class="social-icon-button link list-social__link">
+        <a href="{{ settings.social_youtube_link }}" class="bor bor-1 bor-gray w-40 h-40 d-flex jc-center ai-center rounded-50p link list-social__link">
           <span class="svg-wrapper">
             {{- 'icon-youtube.svg' | inline_asset_content -}}
           </span>
@@ -149,7 +149,7 @@
     {%- endif -%}
     {%- if settings.social_tiktok_link != blank -%}
       <li class="list-social__item">
-        <a href="{{ settings.social_tiktok_link }}" class="social-icon-button link list-social__link">
+        <a href="{{ settings.social_tiktok_link }}" class="bor bor-1 bor-gray w-40 h-40 d-flex jc-center ai-center rounded-50p link list-social__link">
           <span class="svg-wrapper">
             {{- 'icon-tiktok.svg' | inline_asset_content -}}
           </span>
@@ -159,51 +159,11 @@
     {%- endif -%}
     {%- if settings.social_twitter_link != blank -%}
       <li class="list-social__item">
-        <a href="{{ settings.social_twitter_link }}" class="social-icon-button link list-social__link">
+        <a href="{{ settings.social_twitter_link }}" class="bor bor-1 bor-gray w-40 h-40 d-flex jc-center ai-center rounded-50p link list-social__link">
           <span class="svg-wrapper">
             {{- 'icon-twitter.svg' | inline_asset_content -}}
           </span>
           <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_pinterest_link != blank -%}
-      <li class="list-social__item">
-        <a href="{{ settings.social_pinterest_link }}" class="social-icon-button link list-social__link">
-          <span class="svg-wrapper">
-            {{- 'icon-pinterest.svg' | inline_asset_content -}}
-          </span>
-          <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_snapchat_link != blank -%}
-      <li class="list-social__item">
-        <a href="{{ settings.social_snapchat_link }}" class="social-icon-button link list-social__link">
-          <span class="svg-wrapper">
-            {{- 'icon-snapchat.svg' | inline_asset_content -}}
-          </span>
-          <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_tumblr_link != blank -%}
-      <li class="list-social__item">
-        <a href="{{ settings.social_tumblr_link }}" class="social-icon-button link list-social__link">
-          <span class="svg-wrapper">
-            {{- 'icon-tumblr.svg' | inline_asset_content -}}
-          </span>
-          <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_vimeo_link != blank -%}
-      <li class="list-social__item">
-        <a href="{{ settings.social_vimeo_link }}" class="social-icon-button link list-social__link">
-          <span class="svg-wrapper">
-            {{- 'icon-vimeo.svg' | inline_asset_content -}}
-          </span>
-          <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
         </a>
       </li>
     {%- endif -%}

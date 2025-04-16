@@ -88,7 +88,13 @@
                   {%- when 'text' -%}
                     <div class="footer-block__details-content rte">
                       {{ block.settings.subtext }}
+                      
+                      <div class="d-flex g-10">
+                        <input class="newsletter-input flex-1 bor bor-1 bor-gray rounded-35 px-30" placeholder="Enter your email..."/>
+                        <button class="border-none bg-black color-white rounded-35 cursor-pointer fw-600 px-30 py-20">Subscribe</button>
+                      </div>
                     </div>
+                  
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
@@ -260,6 +266,7 @@
       data-cascade
     {% endif %}
   >
+    {% comment %}
     <div class="footer__content-bottom-wrapper page-width">
       <div class="footer__column footer__localization isolate">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -301,8 +308,20 @@
         {%- endif -%}
       </div>
     </div>
-    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption">
+    {% endcomment %}
+
+    <div class="ai-center jc-between footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
+      <div class="d-flex g-10">
+        <div>
+          English
+        </div>
+
+        <div>
+          United States (USD $)
+        </div>
+      </div>
+      
+      <div class="footer__copyright caption mt-0">
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
         </small>
@@ -320,6 +339,78 @@
             {%- endfor -%}
           </ul>
         {%- endif -%}
+      </div>
+
+      <div class="d-flex g-5">
+        <span class="bor bor-1 bor-gray d-flex jc-center ai-center rounded-5 p-2">
+          <img
+            src="{{ 'bg1.svg' | asset_url }}"
+            alt="{{ shop.name }}"
+            class="w-max-content" 
+            width="100%" 
+            height="auto"
+          /> 
+        </span>
+
+        <span class="bor bor-1 bor-gray d-flex jc-center ai-center rounded-5 p-2">
+          <img
+            src="{{ 'bg2.svg' | asset_url }}"
+            alt="{{ shop.name }}"
+            class="w-max-content" 
+            width="100%" 
+            height="auto"
+          /> 
+        </span>
+
+        <span class="bor bor-1 bor-gray d-flex jc-center ai-center rounded-5 p-2">
+          <img
+            src="{{ 'bg3.svg' | asset_url }}"
+            alt="{{ shop.name }}"
+            class="w-max-content" 
+            width="100%" 
+            height="auto"
+          /> 
+        </span>
+
+        <span class="bor bor-1 bor-gray d-flex jc-center ai-center rounded-5 p-2">
+          <img
+            src="{{ 'bg4.svg' | asset_url }}"
+            alt="{{ shop.name }}"
+            class="w-max-content" 
+            width="100%" 
+            height="auto"
+          /> 
+        </span>
+
+        <span class="bor bor-1 bor-gray d-flex jc-center ai-center rounded-5 p-2">
+          <img
+            src="{{ 'bg5.svg' | asset_url }}"
+            alt="{{ shop.name }}"
+            class="w-max-content" 
+            width="100%" 
+            height="auto"
+          /> 
+        </span>
+
+        <span class="bor bor-1 bor-gray d-flex jc-center ai-center rounded-5 p-2">
+          <img
+            src="{{ 'bg6.svg' | asset_url }}"
+            alt="{{ shop.name }}"
+            class="w-max-content" 
+            width="100%" 
+            height="auto"
+          /> 
+        </span>
+
+        <span class="bor bor-1 bor-gray d-flex jc-center ai-center rounded-5 p-2">
+          <img
+            src="{{ 'bg7.svg' | asset_url }}"
+            alt="{{ shop.name }}"
+            class="w-max-content" 
+            width="100%" 
+            height="auto"
+          /> 
+        </span>
       </div>
     </div>
   </div>

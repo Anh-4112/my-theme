@@ -33,7 +33,7 @@
 
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
   <div
-    class="
+    class="relative
       card
       card--{{ card_style }}
       {% if card_collection.featured_image %} card--media{% else %} card--text{% endif %}
@@ -44,12 +44,12 @@
     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
   >
     <div
-      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
+      class="h-fit-content rounded-10 overflow-hidden d-block card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       {%- if card_collection.featured_image -%}
-        <div class="card__media">
-          <div class="media media--transparent media--hover-effect              ">
+        <div class="card__media static">
+          <div class="media media--transparent media--hover-effect static">
             <img
               srcset="
                 {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -71,7 +71,7 @@
               height="{{ card_collection.featured_image.height }}"
               width="{{ card_collection.featured_image.width }}"
               loading="lazy"
-              class="motion-reduce"
+              class="motion-reduce img static"
             >
           </div>
         </div>
@@ -82,7 +82,7 @@
         </div>
       {%- else -%}
         <div class="card__content">
-          <div class="card__information">
+          <div class="card__information p-0">
             <h3 class="card__heading">
               <a
                 {% if card_collection == blank %}
@@ -117,9 +117,9 @@
       {%- endif -%}
     </div>
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading">
+      <div class="card__content absolute bottom-20 left-center w-max-content">
+        <div class="card__information p-0 w-max-content">
+          <h3 class="card__heading w-max-content px-30 py-10 bg-white rounded-35">
             <a
               {% if card_collection == blank %}
                 role="link" aria-disabled="true"
@@ -153,7 +153,7 @@
     {%- endif -%}
     {%- if card_collection == blank -%}
       <div class="card__content">
-        <div class="card__information">
+        <div class="card__information p-0">
           <h3 class="card__heading card__heading--placeholder">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
               {{ 'onboarding.collection_title' | t }}

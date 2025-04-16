@@ -83,6 +83,58 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "collection_list_xjap9F": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_9HfXVN": {
+          "type": "featured_collection",
+          "name": "Clothing",
+          "settings": {
+            "collection": "clothing"
+          }
+        },
+        "featured_collection_farKaL": {
+          "type": "featured_collection",
+          "name": "Sunglasses",
+          "settings": {
+            "collection": "sunglasses"
+          }
+        },
+        "featured_collection_LP8WRW": {
+          "type": "featured_collection",
+          "name": "Bags",
+          "settings": {
+            "collection": "bags"
+          }
+        },
+        "featured_collection_Et8jCc": {
+          "type": "featured_collection",
+          "name": "Sneaker",
+          "settings": {
+            "collection": "sneaker"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_9HfXVN",
+        "featured_collection_farKaL",
+        "featured_collection_LP8WRW",
+        "featured_collection_Et8jCc"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Featured Collections",
+        "heading_size": "h0",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_9UiU7d": {
       "type": "featured-collection",
       "settings": {
@@ -114,6 +166,7 @@
   },
   "order": [
     "slideshow_GMxW7U",
+    "collection_list_xjap9F",
     "featured_collection_9UiU7d"
   ]
 }
