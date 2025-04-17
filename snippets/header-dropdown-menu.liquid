@@ -14,7 +14,7 @@
             <details id="Details-HeaderMenu-{{ forloop.index }}">
               <summary
                 id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item list-menu__item link fw-500 fs-16 focus-inset"
+                class="fs-16 fw-500 color-black color-hover-orange-red header__menu-item list-menu__item link focus-inset"
               >
                 <span
                   {%- if link.child_active %}
@@ -83,7 +83,7 @@
           <a
             id="HeaderMenu-{{ link.handle }}"
             href="{{ link.url }}"
-            class="header__menu-item list-menu__item link fw-500 fs-16 link--text focus-inset"
+            class="header__menu-item list-menu__item link link--text focus-inset fw-500 fs-16 color-black color-hover-orange-red"
             {% if link.current %}
               aria-current="page"
             {% endif %}

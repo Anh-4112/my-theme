@@ -23,21 +23,21 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Hot Categories",
+            "heading": "HOT CATEGORIES",
             "menu": "hot-categories"
           }
         },
         "link_list_c6iHMx": {
           "type": "link_list",
           "settings": {
-            "heading": "Customer Service",
+            "heading": "CUSTOMER SERVICE",
             "menu": "customer-service"
           }
         },
         "text_eFwXhR": {
           "type": "text",
           "settings": {
-            "heading": "Sign Up to Newsletter",
+            "heading": "SIGN UP TO NEWSLETTER",
             "subtext": "<p>Enter your email address to get $10 off your first order and free <br/>shipping. Updates information on Sales and Offers.</p>"
           }
         }

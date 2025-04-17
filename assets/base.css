@@ -491,7 +491,7 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
   font-family: inherit;
 }
 
@@ -3619,6 +3619,10 @@ details-disclosure > details {
   height: 1.5rem;
 }
 
+.box-sizing {
+  box-sizing: border-box;
+}
+
 .img {
   display: block !important;
   width: 100% !important;
@@ -3653,12 +3657,24 @@ details-disclosure > details {
   flex: 1;
 }
 
+.f-65p {
+  flex: 0 0 65%;
+}
+
+.f-34p {
+  flex: 0 0 34%;
+}
+
 .flex-100p {
   flex: 0 0 100%;
 }
 
 .g-0 {
   gap: 0;
+}
+
+.g-1 {
+  gap: 0.1rem;
 }
 
 .g-5 {
@@ -3769,6 +3785,10 @@ details-disclosure > details {
   color: white !important;
 }
 
+.color-hover-orange-red:hover {
+  color: #d0473e !important;
+}
+
 .border-none {
   border: none !important;
 }
@@ -3817,6 +3837,10 @@ details-disclosure > details {
   border-radius: 3.5rem !important;
 }
 
+.fs-14 {
+  font-size: 1.4rem !important;
+}
+
 .fs-16 {
   font-size: 1.6rem !important;
 }
@@ -3839,6 +3863,10 @@ details-disclosure > details {
 
 .mt-10 {
   margin-top: 1rem;
+}
+
+.m-0 {
+  margin: 0 !important;
 }
 
 .mx-auto {
@@ -3889,6 +3917,11 @@ details-disclosure > details {
   padding-bottom: 1rem;
 }
 
+.py-15 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .py-20 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -3902,9 +3935,19 @@ details-disclosure > details {
   margin-bottom: 0 !important;
 }
 
+.mx-20 {
+  margin-left: 2rem !important;
+  margin-right: 2rem !important;
+}
+
 .my-0 {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+
+.my-20 {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .cursor-pointer {
@@ -3939,12 +3982,21 @@ details-disclosure > details {
     flex: 0 0 100%;
   }
 
+  .column-lg {
+    flex-direction: column !important;
+  }
+
   .g-lg-15 {
     gap: 1.5rem;
   }
 
   .f-lg-33p {
-    flex: 0 0 calc((100% - 6rem) / 3) !important;
+    flex: 0 0 calc((100% - 3rem) / 3) !important;
+  }
+
+  .px-lg-50 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
@@ -3980,7 +4032,7 @@ details-disclosure > details {
   }
 
   .f-md-50p {
-    flex: 0 0 calc((100% - 3rem) / 2) !important;
+    flex: 0 0 calc((100% - 1.5rem) / 2) !important;
   }
 
   .justify-md-start {
@@ -3996,8 +4048,17 @@ details-disclosure > details {
   }
 }
 
+@media screen and (max-width: 750px) {
+  .px-sd-15 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
 .newsletter-input:focus {
   border-color: transparent;
+  outline: none;
+  box-shadow: none;
 }
 
 .collection-card-wrapper .icon-wrap {
