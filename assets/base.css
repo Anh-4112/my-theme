@@ -2822,9 +2822,9 @@ details[open] > .header__submenu {
   text-underline-offset: 0.3rem;
 } */
 
-details[open] > .header__menu-item {
+/* details[open] > .header__menu-item {
   text-decoration: underline;
-}
+} */
 
 details[open]:hover > .header__menu-item {
   text-decoration-thickness: 0.2rem;
@@ -3849,6 +3849,10 @@ details-disclosure > details {
   font-weight: 400 !important;
 }
 
+.fw-500 {
+  font-weight: 500 !important;
+}
+
 .fw-600 {
   font-weight: 600 !important;
 }
@@ -3935,6 +3939,10 @@ details-disclosure > details {
   margin-bottom: 0 !important;
 }
 
+.mr-30 {
+  margin-right: 3rem !important;
+}
+
 .mx-20 {
   margin-left: 2rem !important;
   margin-right: 2rem !important;
@@ -3964,7 +3972,20 @@ details-disclosure > details {
   flex: 0 0 17%;
 }
 
+@media screen and (min-width: 1400px) {
+  .left-xxl-20vw {
+    left: 20vw;
+  }
+}
+
 @media screen and (max-width: 1200px) {
+  .footer-block--custom-1,
+  .footer-block--custom-2,
+  .footer-block--custom-3,
+  .footer-block--custom-4 {
+    flex: 0 0 50%;
+  }
+  
   .icon-lg-none {
     display: none !important;
   }
@@ -3975,13 +3996,6 @@ details-disclosure > details {
 }
 
 @media screen and (max-width: 992px) {
-  .footer-block--custom-1,
-  .footer-block--custom-2,
-  .footer-block--custom-3,
-  .footer-block--custom-4 {
-    flex: 0 0 100%;
-  }
-
   .column-lg {
     flex-direction: column !important;
   }
@@ -4001,10 +4015,21 @@ details-disclosure > details {
 }
 
 @media screen and (max-width: 768px) {
+  .footer-block--custom-1,
+  .footer-block--custom-2,
+  .footer-block--custom-3,
+  .footer-block--custom-4 {
+    flex: 0 0 100%;
+  }
+
   .d-md-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     grid-template-rows: repeat(3, auto) !important;
+  }
+
+  .g6-row-md {
+    row-gap: 3rem !important;
   }
   
   .collection-md-item-grid:nth-child(1) {
@@ -4052,6 +4077,17 @@ details-disclosure > details {
   .px-sd-15 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .bot-xs-10 {
+    bottom: 1rem;
+  }
+
+  .py-xs-6 {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
   }
 }
 

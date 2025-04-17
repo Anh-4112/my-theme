@@ -61,14 +61,14 @@
             endif
           -%}
           <div
-            class="d-flex flex-100p g-0 footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="d-flex flex-100p g-0 g6-row-md footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
           >
             {%- for block in section.blocks -%}
               <div
-                class="footer-block grid__item
+                class="my-0 footer-block grid__item
                   {% if block.type == 'link_list' %} footer-block--menu{% endif %}
                   footer-block--custom-{{ forloop.index }}
                   {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -101,7 +101,7 @@
                   
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
-                      <ul class="footer-block__details-content list-unstyled">
+                      <ul class="mb-0 footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
                           <li>
                             <a
